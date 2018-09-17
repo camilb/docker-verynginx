@@ -2,8 +2,8 @@ def label = "worker-${UUID.randomUUID().toString()}"
 
 podTemplate(label: label, serviceAccount: "jenkins", containers: [
   containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.8.8', command: 'cat', ttyEnabled: true),
-  containerTemplate(name: 'helm', image: 'lachlanevenson/k8s-helm:latest', command: 'cat', ttyEnabled: true)
+  containerTemplate(name: 'kubectl', image: 'registry.prezly.io/kubectl:1.11.3', command: 'cat', ttyEnabled: true),
+  containerTemplate(name: 'helm', image: 'registry.prezly.io/helm:2.10.0', command: 'cat', ttyEnabled: true)
 ],
 volumes: [
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
