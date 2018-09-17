@@ -29,15 +29,14 @@ volumes: [
         }
       }
     }
-
-    stage('Run helm') {
-      container('helm') {
-        sh "helm list"
-      }
-    }
     stage('Run kubectl') {
       container('kubectl') {
         sh "kubectl get pods -n production"
+      }
+    }
+    stage('Run helm') {
+      container('helm') {
+        sh "helm list"
       }
     }
   }
