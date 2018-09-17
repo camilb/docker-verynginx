@@ -31,7 +31,7 @@ volumes: [
     }
     stage('Run kubectl') {
       container('kubectl') {
-        sh "kubectl get pods"
+        sh "kubectl get pods -n production"
       }
     }
     stage('Run helm') {
