@@ -4,3 +4,5 @@ RUN apk update \
  && apk add curl 
 
 RUN echo "OK"
+
+RUN echo "2"
