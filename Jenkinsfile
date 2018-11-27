@@ -22,9 +22,9 @@ volumes: [
           usernameVariable: 'DOCKER_HUB_USER',
           passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
           sh """
-            docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
-            docker build -t camil/vx:${gitCommit} .
-            docker push camil/vx:${gitCommit}
+            docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD} https://319065933276.dkr.ecr.eu-west-1.amazonaws.com
+            docker build -t 319065933276.dkr.ecr.eu-west-1.amazonaws.com/vx:${gitCommit} .
+            docker push 319065933276.dkr.ecr.eu-west-1.amazonaws.com/vx:${gitCommit}
             """
         }
       }
