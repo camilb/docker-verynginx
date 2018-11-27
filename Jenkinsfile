@@ -18,7 +18,7 @@ volumes: [
     stage('Create Docker images') {
       container('docker') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding',
-          credentialsId: 'dockerhub',
+          credentialsId: 'docker',
           usernameVariable: 'DOCKER_HUB_USER',
           passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
           sh """
